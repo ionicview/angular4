@@ -1,0 +1,26 @@
+<div id="center">
+    <h2 class="section-title">用户登录</h2>
+    <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="login(loginForm.value)">
+        <mat-input-container class="input-container">
+            <input matInput type="text"
+                   placeholder="请输入用户名"
+                   formControlName="username">
+        </mat-input-container>
+        <mat-input-container class="input-container">
+            <input matInput type="password"
+                   placeholder="请输入用户密码"
+                   formControlName="password">
+        </mat-input-container>
+            
+    
+        <button mat-raised-button type="submit" [disabled]="!loginForm.valid">
+            登录
+        </button>
+        
+    </form>
+    <!-- <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+    <mat-form-field>
+        <input matInput type="text" formControlName="username" placeholder="请输入用户名">
+    </mat-form-field>
+    </form> -->
+</div>
